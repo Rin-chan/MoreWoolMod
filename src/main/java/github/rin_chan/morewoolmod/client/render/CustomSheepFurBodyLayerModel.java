@@ -47,8 +47,19 @@ public class CustomSheepFurBodyLayerModel<T extends CustomSheep> extends Quadrup
       if (!(this.young)) {
     	  int WoolSize = WoolLevel - 1;
     	  float resize = 1.0F + (0.1F * WoolSize);
+
+    	  /* Wool Size = translateY (For graphing and equation reference points)
+    	   * 0 = 0
+    	   * 10 = -0.38
+    	   * 20 = -0.56
+    	   * 35 = -0.66
+    	   * 50 = -0.71
+    	   * 100 = -0.78
+    	   */
+    	  double translateY = 0.012852 - 0.196078 * Math.pow(WoolSize, 0.30379);
+    	  
           p_102034_.scale(resize, resize, 1.0F);
-          p_102034_.translate(0.0F, -0.03F * WoolSize, 0.0F);
+          p_102034_.translate(0.0F, translateY, 0.0F);
           
           this.body.render(p_102034_, p_102035_, p_102036_, p_102037_, p_102038_, p_102039_, p_102040_, p_102041_);
       }
