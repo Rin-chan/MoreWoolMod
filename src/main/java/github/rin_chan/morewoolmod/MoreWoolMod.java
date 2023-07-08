@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import com.mojang.logging.LogUtils;
 
 import github.rin_chan.morewoolmod.client.render.CustomSheepRenderer;
+import github.rin_chan.morewoolmod.config.MoreWoolModCommonConfigs;
 import github.rin_chan.morewoolmod.entity.animal.CustomSheep;
 import github.rin_chan.morewoolmod.init.ModEntities;
 import net.minecraft.world.entity.animal.Sheep;
@@ -14,7 +15,9 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod(MoreWoolMod.MODID)
@@ -28,6 +31,7 @@ public class MoreWoolMod {
         
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ModEntities.register(modEventBus);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, MoreWoolModCommonConfigs.SPEC, "morewoolmod-common.toml");
     }
     
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)

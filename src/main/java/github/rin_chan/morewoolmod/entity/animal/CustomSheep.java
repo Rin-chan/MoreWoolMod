@@ -6,6 +6,7 @@ import javax.annotation.Nullable;
 
 import com.google.common.collect.Maps;
 
+import github.rin_chan.morewoolmod.config.MoreWoolModCommonConfigs;
 import github.rin_chan.morewoolmod.init.ModEntities;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
@@ -70,7 +71,7 @@ public class CustomSheep extends Sheep {
    }
 	
     public void setWoolLevel(int value) {
-    	if (value <= 20) {
+    	if (value <= MoreWoolModCommonConfigs.MAX_SHEEP_SIZE.get()) {
     		this.entityData.set(DATA_SIZE, value);
     	}
     }
