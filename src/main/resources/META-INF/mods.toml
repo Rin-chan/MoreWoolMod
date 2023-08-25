@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="[40,)"
+license="All rights reserved"
+[[mods]]
+modId="morewoolmod"
+version="1.0.0"
+displayName="More Wool Mod"
+logoFile="examplemod.png"
+credits="Developer: Rin-Chan"
+authors="Rin-Chan"
+description='''
+Making sheeps grow and drop more wool.
+'''
+
+[[dependencies.morewoolmod]]
+    modId="forge"
+    mandatory=true
+    versionRange="[40,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.morewoolmod]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18.2,1.19)"
+    ordering="NONE"
+    side="BOTH"
